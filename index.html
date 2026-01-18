@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeMaster - By Atharv</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌨️</text></svg>">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation">
+        <div class="floating-key">⌨️</div>
+        <div class="floating-key">📝</div>
+        <div class="floating-key">💻</div>
+        <div class="floating-key">⚡</div>
+        <div class="floating-key">🎯</div>
+        <div class="floating-key">📊</div>
+        <div class="floating-key">🏆</div>
+        <div class="floating-key">⌛</div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-icon">⌨️</div>
+                <span class="brand-text">TypeMaster</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link">Practice</a></li>
+                <li><a href="#" class="nav-link">Leaderboard</a></li>
+                <li><a href="#" class="nav-link">About</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn btn-outline">Login</button>
+                <button class="btn btn-primary">Sign Up</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Master Your <span class="text-gradient">Typing Speed</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Test your typing skills, improve your WPM, and become a keyboard ninja!
+                </p>
+                <div class="hero-cta">
+                    <button class="btn btn-large btn-primary" id="startTestBtn">
+                        <span class="btn-icon">🚀</span>
+                        Start Typing Test
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Dashboard -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="timeDisplay">60</div>
+                        <div class="stat-label">Time Left</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📝</div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="wpmDisplay">0</div>
+                        <div class="stat-label">Words/Min</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⌨️</div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="cpmDisplay">0</div>
+                        <div class="stat-label">Chars/Min</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="accuracyDisplay">100%</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typing Test Area -->
+        <section class="typing-area">
+            <div class="test-container">
+                <div class="test-header">
+                    <h2 class="test-title">Ready to Type?</h2>
+                    <p class="test-instruction">Click the text below and start typing when you're ready!</p>
+                </div>
+                
+                <div class="text-display" id="textDisplay">
+                    <span class="text-content">The quick brown fox jumps over the lazy dog near the river bank.</span>
+                </div>
+
+                <div class="input-area">
+                    <textarea 
+                        id="userInput" 
+                        class="typing-input"
+                        placeholder="Start typing here..."
+                        rows="4"
+                        disabled
+                    ></textarea>
+                </div>
+
+                <div class="test-controls">
+                    <button class="btn btn-secondary" id="resetBtn">
+                        <span class="btn-icon">🔄</span>
+                        Reset Test
+                    </button>
+                    <div class="difficulty-selector">
+                        <label>Difficulty:</label>
+                        <select id="difficultySelect">
+                            <option value="easy">Easy</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress Section -->
+        <section class="progress-section">
+            <div class="progress-container">
+                <div class="progress-header">
+                    <h3>Your Progress</h3>
+                    <span class="progress-percentage" id="progressText">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Success Section -->
+    <section class="success-section">
+        <div class="success-container">
+            <div class="success-content">
+                <div class="success-branding">
+                    <h2 class="success-title">Achievement</h2>
+                    <p class="success-subtitle">by TypeMaster Team</p>
+                </div>
+                <h3 class="success-heading">How to improve your typing speed?</h3>
+                <p class="success-description">
+                    Practice regularly with our typing speed tests, focus on accuracy first, then speed. 
+                    Use proper finger placement and maintain good posture for optimal performance.
+                </p>
+                <div class="success-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">🎯</span>
+                        <span class="feature-text">Accurate Tracking</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📊</span>
+                        <span class="feature-text">Detailed Analytics</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🏆</span>
+                        <span class="feature-text">Compete with Friends</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-container">
+            <h1>About Developer</h1>
+            <p class="about-para">TypeMaster is a comprehensive typing speed test application designed to help users improve their typing skills. Our platform offers various difficulty levels and detailed analytics to track your progress over time ,Developed By Atharv Pote</p>
+        </div>
+
+    <section id="skills" class="skills container">
+      <div class="section-header">
+        <span class="section-number"></span>
+        <h1>Skills & Technologies Used</h1>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4>Languages</h4>
+          <div class="skill-tags">
+            
+            <span class="skill-tag">JavaScript</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h4>Web Technologies</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Responsive Design</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h4>Tools & Others</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Cursor</span>
+            <span class="skill-tag">DeepSeek AI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    </section>
+
+    <!-- Results Modal -->
+    <div id="resultsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Test Complete! 🎉</h2>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="results-grid">
+                    <div class="result-item">
+                        <div class="result-label">Final WPM</div>
+                        <div class="result-value" id="finalWpm">0</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">Final CPM</div>
+                        <div class="result-value" id="finalCpm">0</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">Accuracy</div>
+                        <div class="result-value" id="finalAccuracy">0%</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">Total Errors</div>
+                        <div class="result-value" id="finalErrors">0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="tryAgainBtn">Try Again</button>
+                <button class="btn btn-secondary" id="shareBtn">Share Results</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
